@@ -47,12 +47,7 @@ open class Kampfsystem(private var held: Charakter) {
                     zufallsGegner.lebensPunkte -= heroAttack
                     println("Dein Angriff gegen ${zufallsGegner.name} war erfolgreich! Du verursachst ${heroAttack} Schaden!")
 
-//                    val heilTrankDrop = Items(name = "", heal = 0)
-//                    println("Ein ${heilTrankDrop} wurde gedroppt!")
-//                    if (zufaelligerTrank != null) {
-//                        held.heilen(zufaelligerTrank.heilung)
-//                        println("Du wurdest um ${zufaelligerTrank.heilung} Lebenspunkte geheilt. Aktuelle LP: ${held.lebensPunkte}")
-//                    }
+
                 } else {
                     println("Dein Angriff ist misslungen!")
                 }

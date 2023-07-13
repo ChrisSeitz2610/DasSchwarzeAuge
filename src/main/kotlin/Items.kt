@@ -13,3 +13,4 @@ open class Items (var name: String, heal: Int) {
     val zufallListe = traenke()
     val zufaelligerTrank = zufallListe.first()
 }
+// hat leider nicht so funktioniert wie ich es mir vorgestellt hatte

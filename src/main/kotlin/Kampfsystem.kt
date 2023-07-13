@@ -38,13 +38,16 @@ open class Kampfsystem(private var held: Charakter) {
             println("${held.name} (Aktuelle LP: ${held.lebensPunkte}) tritt gegen ${zufallsGegner.name} (Aktuelle LP: ${zufallsGegner.lebensPunkte}) an!")
 
             while (held.lebensPunkte > 0 && zufallsGegner.lebensPunkte > 0) {
+                println()
+                Thread.sleep(1500)
                 println("Drücke Enter, um deinen Angriff zu starten!")
                 readln()
+                Thread.sleep(1500)
 
                 val heldWurf = wuerfelWurf(20)
                 if (heldWurf in 1..12) {
-                    val heroAttack = schadenErmitteln(held.minSchaden, held.maxSchaden)
-                    zufallsGegner.lebensPunkte -= heroAttack
+                    val heroAttack = schadenErmitteln(held.minSchaden, held.maxSchaden) // Hilfe von meiner Gruppe
+                    zufallsGegner.lebensPunkte -= heroAttack // Hilfe von meiner Gruppe
                     println("Dein Angriff gegen ${zufallsGegner.name} war erfolgreich! Du verursachst ${heroAttack} Schaden!")
 
 
@@ -56,12 +59,14 @@ open class Kampfsystem(private var held: Charakter) {
                     break
                 }
                 println()
+                Thread.sleep(1500)
                 println("Drücke Enter, um den Angriff deines Gegners zu starten!")
                 readln()
+                Thread.sleep(1500)
                 val gegnerWurf = wuerfelWurf(20)
                 if (gegnerWurf in 1..12) {
-                    val enemyAttack = schadenErmitteln(zufallsGegner.minSchaden, zufallsGegner.maxSchaden)
-                    held.lebensPunkte -= enemyAttack
+                    val enemyAttack = schadenErmitteln(zufallsGegner.minSchaden, zufallsGegner.maxSchaden) // Hilfe von meiner Gruppe
+                    held.lebensPunkte -= enemyAttack // Hilfe von meiner Gruppe
                     println("${zufallsGegner.name} greift dich an und verursacht ${enemyAttack} Schaden!")
                 } else {
                     println("Der Angriff des Gegners ist misslungen!")
@@ -70,11 +75,10 @@ open class Kampfsystem(private var held: Charakter) {
                     println("${held.name} wurde besiegt! GAME OVER!")
                     return
                 }
-
             }
         }
-        if (kampfAnzahl == 5 && held.lebensPunkte > 0) {
-            println("Du hast die Kämpfe überlebt! Gut gemacht! Du bist frei!")
+        if (kampfAnzahl == 2 && held.lebensPunkte > 0) {
+            println("Du hast die Kämpfe überlebt und noch ${held.lebensPunkte} Lebenspunkte übrig! Gut gemacht! Du bist frei!")
         }
     }
 }

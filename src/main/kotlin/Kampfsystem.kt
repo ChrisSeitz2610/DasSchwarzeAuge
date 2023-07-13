@@ -2,11 +2,11 @@ open class Kampfsystem(private var held: Charakter) {
 
 
     private val heldenListe = listOf(
-        Charakter("Frenja Halmansdottir", 35, "Skarja-Axt", 5, 7),
-        Charakter("Lyra Schattenflug", 30, "Kurzschwert", 3, 7),
-        Charakter("Gandar Eisenfaust", 40, "Langschwert", 4, 8),
-        Charakter("Aurelia Sturmwind", 28, "Langdolch", 3, 6),
-        Charakter("Eldarion Windbrecher", 25, "Speer", 3, 7)
+        Charakter("Frenja Halmansdottir", 100, "Skarja-Axt", 6, 9),
+        Charakter("Lyra Schattenflug", 110, "Kurzschwert", 6, 8),
+        Charakter("Gandar Eisenfaust", 120, "Langschwert", 7, 9),
+        Charakter("Aurelia Sturmwind", 90, "gekrümmter Langdolch", 5, 8),
+        Charakter("Eldarion Windbrecher", 80, "Flammenspeer", 7, 9)
     )
 
     private val gegnerliste = listOf(

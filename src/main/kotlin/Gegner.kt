@@ -5,6 +5,5 @@ open class Gegner(
     var minSchaden: Int,
     var maxSchaden: Int) {
 
-    var schaden:() -> Int = {0}
 
 }

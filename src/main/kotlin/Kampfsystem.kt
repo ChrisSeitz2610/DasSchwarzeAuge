@@ -15,17 +15,18 @@ open class Kampfsystem(private var held: Charakter) {
         Gegner("Ork-Berserker", 40, "Streitaxt", 4, 8),
         Gegner("Ork-Häuptling", 50, "Kriegshammer", 5, 10)
     )
+        fun traenke (): List<Items> {
+            val trank1 = Items("kleiner Heiltrank", 10)
+            val trank2 = Items("mittlerer Heiltrank", 25)
+            val trank3 = Items("großer Heiltrank", 35)
+            val trank4 = Items("Trank der Götter", 70)
 
-    fun traenke (): List<Items> {
-        val trank1 = Items("kleiner Heiltrank", 10)
-        val trank2 = Items("mittlerer Heiltrank", 25)
-        val trank3 = Items("großer Heiltrank", 35)
-        val trank4 = Items("Trank der Götter", 70)
-
-        return listOf(trank1, trank2, trank3, trank4).shuffled()
+            return listOf(trank1, trank2, trank3, trank4).shuffled()
+        }
+    fun randomTrank(items: MutableList<Items>): Items? {
+        val shuffledItems = items.shuffled()
+        return shuffledItems.firstOrNull()
     }
-    val zufallListe = traenke()
-    val zufaelligerTrank = zufallListe.first()
 
     fun wuerfelWurf(seiten: Int) : Int {
         return (1..seiten).random()
@@ -68,7 +69,8 @@ open class Kampfsystem(private var held: Charakter) {
                 if (zufallsGegner.lebensPunkte <= 0) {
                     println("Der Feind wurde besiegt!")
                     println()
-                    //held.lebensPunkte += zufaelligerTrank
+                    // val heilen = traenke()
+                    //held.lebensPunkte += randomTrank()
                     break
                 }
                 println()
